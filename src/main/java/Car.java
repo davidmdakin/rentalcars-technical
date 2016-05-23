@@ -152,7 +152,7 @@ public class Car {
 		return score;
 	}
 	
-	float getCombinedScore()
+	public float getCombinedScore()
 	{
 		return this.getRating() + this.getVehicleScore();
 	}

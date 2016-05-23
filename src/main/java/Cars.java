@@ -44,6 +44,12 @@ public class Cars {
 				System.out.println(car.getEx3Output());
 			}
 			System.out.println("");
+			
+			ArrayList<Car> carsByScore = SortByCombinedScoreDesc(carList);
+			for (Car car : carsByScore)
+			{
+				System.out.println(car.getEx4Output());
+			}
 		}
 	}
 	
@@ -96,6 +102,12 @@ public class Cars {
 	    topCars.add(topCar);
 	    Collections.sort(topCars, (Car p1, Car p2) -> Float.compare(p2.getRating(), p1.getRating()));
 	    return topCars;
+	}
+	
+	public static ArrayList<Car> SortByCombinedScoreDesc(ArrayList<Car> carList)
+	{
+		Collections.sort(carList, (Car p1, Car p2) -> Float.compare(p2.getCombinedScore(), p1.getCombinedScore()));
+		return carList;
 	}
 
 }
