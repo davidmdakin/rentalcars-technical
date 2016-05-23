@@ -25,10 +25,17 @@ public class Cars {
 		if (input.length() > 0)
 		{
 			ArrayList<Car> carList = JsonStringToCarList(input);
-			carList = SortByPriceAsc(carList);
-			for (Car car : carList)
+			ArrayList<Car> sortedCarList = SortByPriceAsc(carList);
+			for (Car car : sortedCarList)
 			{
 				System.out.println(car.getEx1Output());
+			}
+			
+			System.out.println("");
+			
+			for (Car car : carList)
+			{
+				System.out.println(car.getEx2Output());
 			}
 		}
 	}
