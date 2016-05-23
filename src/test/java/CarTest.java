@@ -18,6 +18,21 @@ public class CarTest {
 	}
 	
 	@Test
+	public final void CorrectLengthOfCarList()
+	{
+		String json = "";
+		try {
+			json = Cars.readFile("C:/vehicles.json");
+		}
+		catch (Exception e)
+		{
+			fail("Exception " + e);
+		}
+		ArrayList<Car> carList = Cars.JsonStringToCarList(json);
+		assertEquals(carList.size(), 31);
+	}
+	
+	@Test
 	public final void CarListSortedByPriceAsc()
 	{
 		String json = "";
