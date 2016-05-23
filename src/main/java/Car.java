@@ -152,6 +152,11 @@ public class Car {
 		return score;
 	}
 	
+	float getCombinedScore()
+	{
+		return this.getRating() + this.getVehicleScore();
+	}
+	
 	public String getEx1Output()
 	{
 		return this.getName() + " - " + this.getPrice();
@@ -169,6 +174,6 @@ public class Car {
 	
 	public String getEx4Output()
 	{
-		return this.getName() + " - " + this.getVehicleScore() + " - " + this.getRating() + " - " + (this.getVehicleScore() + this.getRating());
+		return this.getName() + " - " + this.getVehicleScore() + " - " + this.getRating() + " - " + this.getCombinedScore();
 	}
 }
