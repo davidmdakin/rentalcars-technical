@@ -74,4 +74,23 @@ public class CarTest {
 		String ex4Output = car.getEx4Output();
 		assertEquals(ex4Output, "Ford Focus - 3 - 8.9 - 11.9");
 	}
+	
+	@Test
+	public final void carListSortedByCombinedScoreDesc()
+	{
+		String json = "";
+		try {
+			json = Cars.readFile("C:/vehicles.json");
+		}
+		catch (Exception e)
+		{
+			fail("Exception " + e);
+		}
+		ArrayList<Car> carList = Cars.JsonStringToCarList(json);
+		carList = Cars.SortByCombinedScoreDesc(carList);
+		for (int i = 0; i < carList.size() - 1; i++)
+		{
+			assertTrue(Float.compare(carList.get(i).getCombinedScore(), carList.get(i+1).getCombinedScore()) <= 0);
+		}
+	}
 }
