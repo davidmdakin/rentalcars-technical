@@ -66,4 +66,12 @@ public class CarTest {
 		String ex3Output = car.getEx3Output();
 		assertEquals(ex3Output, "Ford Focus - Compact - Hertz - 8.9");
 	}
+	
+	@Test
+	public final void CarToEx4Output()
+	{
+		Car car = new Car("CDMR", "Ford Focus", 157.85f, "Hertz", 8.9f);
+		String ex4Output = car.getEx4Output();
+		assertEquals(ex4Output, "Ford Focus - 3 - 8.9 - 11.9");
+	}
 }
