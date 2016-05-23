@@ -30,13 +30,20 @@ public class Cars {
 			{
 				System.out.println(car.getEx1Output());
 			}
-			
 			System.out.println("");
 			
 			for (Car car : carList)
 			{
 				System.out.println(car.getEx2Output());
 			}
+			System.out.println("");
+			
+			ArrayList<Car> topSupplierPerCarType = HighestRatedSupplierPerCarType(carList);
+			for (Car car : topSupplierPerCarType)
+			{
+				System.out.println(car.getEx3Output());
+			}
+			System.out.println("");
 		}
 	}
 	
@@ -66,6 +73,29 @@ public class Cars {
 	{
 		Collections.sort(carList, (Car p1, Car p2) -> Float.compare(p1.getPrice(), p2.getPrice()));
 		return carList;
+	}
+	
+	public static ArrayList<Car> HighestRatedSupplierPerCarType(ArrayList<Car> carList)
+	{
+		Collections.sort(carList, (Car p1, Car p2) -> p1.getSipp1().compareTo(p2.getSipp1()));
+		
+		ArrayList<Car> topCars = new ArrayList<Car>();
+	    Car topCar = carList.get(0);
+	    for (Car car : carList)
+	    {
+	    	if (!car.getSipp1().equalsIgnoreCase(topCar.getSipp1()))
+	    	{
+	    		topCars.add(topCar);
+	    		topCar = car;
+	    	}
+	    	if (car.getRating() > topCar.getRating())
+	    	{
+	    		topCar = car;
+	    	}
+	    }
+	    topCars.add(topCar);
+	    Collections.sort(topCars, (Car p1, Car p2) -> Float.compare(p2.getRating(), p1.getRating()));
+	    return topCars;
 	}
 
 }
