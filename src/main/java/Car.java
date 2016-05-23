@@ -132,4 +132,9 @@ public class Car {
 	{
 		return this.getName() + " - " + this.getSipp() + " - " + this.getSipp1() + " - " + this.getSipp2() + " - " + this.getSipp3() + " - " + this.getSipp4();
 	}
+	
+	public String getEx3Output()
+	{
+		return this.getName() + " - " + this.getSipp1() + " - " + this.getSupplier() + " - " + this.getRating();
+	}
 }
