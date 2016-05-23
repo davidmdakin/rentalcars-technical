@@ -90,7 +90,7 @@ public class CarTest {
 		carList = Cars.SortByCombinedScoreDesc(carList);
 		for (int i = 0; i < carList.size() - 1; i++)
 		{
-			assertTrue(Float.compare(carList.get(i).getCombinedScore(), carList.get(i+1).getCombinedScore()) <= 0);
+			assertTrue(Float.compare(carList.get(i).getCombinedScore(), carList.get(i+1).getCombinedScore()) >= 0);
 		}
 	}
 }
