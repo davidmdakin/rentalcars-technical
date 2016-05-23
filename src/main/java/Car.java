@@ -123,6 +123,35 @@ public class Car {
     	}
 	}
 	
+	int getVehicleScore()
+	{
+		int score = 0;
+		char sipp = this.getSipp().charAt(2);
+		switch (sipp)
+		{
+    	case 'M':
+    		score += 1;
+    		break;
+    	case 'A':
+    		score += 5;
+    		break;
+		default:
+			break;
+    	}
+		sipp = this.getSipp().charAt(3);
+		switch (sipp)
+		{
+    	case 'N':
+    		break;
+    	case 'R':
+    		score += 2;
+    		break;
+		default:
+			break;
+    	}
+		return score;
+	}
+	
 	public String getEx1Output()
 	{
 		return this.getName() + " - " + this.getPrice();
@@ -136,5 +165,10 @@ public class Car {
 	public String getEx3Output()
 	{
 		return this.getName() + " - " + this.getSipp1() + " - " + this.getSupplier() + " - " + this.getRating();
+	}
+	
+	public String getEx4Output()
+	{
+		return this.getName() + " - " + this.getVehicleScore() + " - " + this.getRating() + " - " + (this.getVehicleScore() + this.getRating());
 	}
 }
