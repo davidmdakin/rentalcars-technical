@@ -32,7 +32,7 @@ public class CarTest {
 		carList = Cars.SortByPriceAsc(carList);
 		for (int i = 0; i < carList.size() - 1; i++)
 		{
-			assertTrue(carList.get(i).getPrice() < carList.get(i+1).getPrice());
+			assertTrue(Float.compare(carList.get(i).getPrice(), carList.get(i+1).getPrice()) <= 0);
 		}
 	}
 }
