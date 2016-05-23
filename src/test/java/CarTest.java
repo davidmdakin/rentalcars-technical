@@ -50,4 +50,12 @@ public class CarTest {
 			assertTrue(Float.compare(carList.get(i).getPrice(), carList.get(i+1).getPrice()) <= 0);
 		}
 	}
+	
+	@Test
+	public final void CarToEx2Output()
+	{
+		Car car = new Car("CDMR", "Ford Focus", 157.85f, "Hertz", 8.9f);
+		String ex1Output = car.getEx2Output();
+		assertEquals(ex1Output, "Ford Focus - Compact - 5 doors - Manual - Petrol - AC");
+	}
 }
