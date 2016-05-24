@@ -16,7 +16,7 @@ public class Cars {
 	{
 		String input = "";
 		try {
-			input = readFile("C:/vehicles.json");
+			input = readFile("/vehicles.json");
 		}
 		catch (IOException e)
 		{
